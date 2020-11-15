@@ -1,9 +1,11 @@
 package com.sap.co2.emission.calc.service;
 
-public class TransportationmethodCogConfig {
+import java.math.BigDecimal;
+
+public class TransportationmethodConfig {
 
 	private String transportationMethod;
-	private String co2avg;
+	private BigDecimal co2avg;
 	private String co2AvgUnit;
 
 	public String getTransportationMethod() {
@@ -30,7 +32,7 @@ public class TransportationmethodCogConfig {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TransportationmethodCogConfig other = (TransportationmethodCogConfig) obj;
+		TransportationmethodConfig other = (TransportationmethodConfig) obj;
 		if (transportationMethod == null) {
 			if (other.transportationMethod != null)
 				return false;
@@ -39,11 +41,11 @@ public class TransportationmethodCogConfig {
 		return true;
 	}
 
-	public String getCo2avg() {
+	public BigDecimal getCo2avg() {
 		return co2avg;
 	}
 
-	public void setCo2avg(String co2avg) {
+	public void setCo2avg(BigDecimal co2avg) {
 		this.co2avg = co2avg;
 	}
 
@@ -53,6 +55,12 @@ public class TransportationmethodCogConfig {
 
 	public void setCo2AvgUnit(String co2AvgUnit) {
 		this.co2AvgUnit = co2AvgUnit;
+	}
+
+	@Override
+	public String toString() {
+		return "TransportationmethodConfig [transportationMethod=" + transportationMethod + ", co2avg=" + co2avg
+				+ ", co2AvgUnit=" + co2AvgUnit + "]";
 	}
 
 }

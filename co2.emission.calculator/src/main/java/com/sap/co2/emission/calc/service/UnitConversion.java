@@ -42,7 +42,7 @@ public class UnitConversion {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((fromUnit == null) ? 0 : fromUnit.hashCode());
-		result = prime * result + ((multiplier == null) ? 0 : multiplier.hashCode());
+		result = prime * result + ((toUnit == null) ? 0 : toUnit.hashCode());
 		return result;
 	}
 
@@ -60,12 +60,18 @@ public class UnitConversion {
 				return false;
 		} else if (!fromUnit.equals(other.fromUnit))
 			return false;
-		if (multiplier == null) {
-			if (other.multiplier != null)
+		if (toUnit == null) {
+			if (other.toUnit != null)
 				return false;
-		} else if (!multiplier.equals(other.multiplier))
+		} else if (!toUnit.equals(other.toUnit))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "UnitConversion [fromUnit=" + fromUnit + ", toUnit=" + toUnit + ", multiplier=" + multiplier + ", round="
+				+ round + "]";
 	}
 
 	public void setRound(Integer round) {
