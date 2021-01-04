@@ -6,7 +6,7 @@ public class CalculatorInputBuilder {
 
 	private String EQUALS_SEPERATOR = "=";
 	private String SPACE_SEPERATOR = " ";
-
+//test
 	public EmissionCalculatorInput build(String input) {
 
 		EmissionCalculatorInput calculatorInput = new EmissionCalculatorInput();
